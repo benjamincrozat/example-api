@@ -1,0 +1,25 @@
+{
+    "preset": "laravel",
+    "exclude": [
+        "bootstrap/cache",
+        "storage"
+    ],
+    "rules": {
+        "concat_space": {
+            "spacing": "one"
+        },
+        "new_with_braces": {
+            "anonymous_class": false,
+            "named_class": false
+        },
+        "ordered_imports": {
+            "sort_algorithm": "length"
+        },
+        "ordered_traits": true,
+        "return_type_declaration": {
+            "space_before": "one"
+        },
+        "single_trait_insert_per_statement": false,
+        "yoda_style": true
+    }
+}
