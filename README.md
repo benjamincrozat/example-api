@@ -8,7 +8,9 @@ Requirements:
 
 - Docker Desktop
 
-From the project root, run:
+This repository already includes Sail's published `compose.yaml`, `sail`, and Docker files.
+
+From the project root, run these commands in order:
 
 ```bash
 cp .env.example .env
