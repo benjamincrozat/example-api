@@ -1,14 +1,13 @@
-*.log
 .DS_Store
 .env
 .env.backup
 .env.production
 .phpactor.json
-.phpunit.result.cache
+*.cache
+*.log
 /.fleet
 /.idea
 /.nova
-/.phpunit.cache
 /.vscode
 /.zed
 /auth.json
@@ -21,4 +20,5 @@
 /vendor
 Homestead.json
 Homestead.yaml
+phpunit.xml
 Thumbs.db
