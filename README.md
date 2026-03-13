@@ -7,13 +7,17 @@ Small Laravel API project for a `Product` CRUD. It runs with Laravel Sail on PHP
 Requirements:
 
 - Docker Desktop
-- Composer
 
 From the project root, run:
 
 ```bash
 cp .env.example .env
-composer install
+docker run --rm \
+  -u "$(id -u):$(id -g)" \
+  -v "$(pwd):/var/www/html" \
+  -w /var/www/html \
+  laravelsail/php84-composer:latest \
+  composer install --ignore-platform-reqs
 ./vendor/bin/sail up -d
 ./vendor/bin/sail artisan key:generate
 ./vendor/bin/sail artisan migrate --seed --force
