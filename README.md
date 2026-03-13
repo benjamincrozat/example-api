@@ -20,7 +20,7 @@ docker run --rm \
   composer install --ignore-platform-reqs
 ./vendor/bin/sail up -d
 ./vendor/bin/sail artisan key:generate
-./vendor/bin/sail artisan migrate --seed --force
+./vendor/bin/sail artisan migrate --seed
 ```
 
 Once the application is running, open the API documentation at [http://localhost:8000/docs/api](http://localhost:8000/docs/api).
