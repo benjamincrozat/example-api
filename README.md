@@ -12,20 +12,14 @@ From the project root, run:
 
 ```bash
 cp .env.example .env
-docker run --rm \
-  -u "$(id -u):$(id -g)" \
-  -v "$(pwd):/var/www/html" \
-  -w /var/www/html \
-  laravelsail/php84-composer:latest \
-  composer install --ignore-platform-reqs
-./vendor/bin/sail up -d
-./vendor/bin/sail artisan key:generate
-./vendor/bin/sail artisan migrate --seed
+./sail up -d
+./sail composer install
+./sail artisan key:generate
+./sail artisan migrate --seed
 ```
 
 Once the application is running, open the API documentation at [http://localhost:8000/docs/api](http://localhost:8000/docs/api).
 The database seeder creates a default user and 10 sample products so the API is not empty after setup.
-The bootstrap install step uses `laravelsail/php84-composer:latest` because that Composer helper image is currently published, while `laravelsail/php85-composer:latest` is not. The application itself still runs on PHP 8.5 in Sail.
 
 ## URLs
 
@@ -46,13 +40,13 @@ DELETE /api/products/{id}
 ## Optional Checks
 
 ```bash
-./vendor/bin/sail test
-./vendor/bin/sail composer run analyse
-./vendor/bin/sail pint
+./sail test
+./sail composer run analyse
+./sail pint
 ```
 
 ## Stop
 
 ```bash
-./vendor/bin/sail down
+./sail down
 ```
