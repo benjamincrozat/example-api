@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+while [ ! -f /var/www/html/vendor/autoload.php ]; do
+    sleep 1
+done
+
+exec /usr/bin/php -d variables_order=EGPCS /var/www/html/artisan serve --host=0.0.0.0 --port=80
