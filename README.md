@@ -16,10 +16,11 @@ cp .env.example .env
 composer install
 ./vendor/bin/sail up -d
 ./vendor/bin/sail artisan key:generate
-./vendor/bin/sail artisan migrate --force
+./vendor/bin/sail artisan migrate --seed --force
 ```
 
 Once the application is running, open the API documentation at [http://localhost:8000/docs/api](http://localhost:8000/docs/api).
+The database seeder creates a default user and 10 sample products so the API is not empty after setup.
 
 ## URLs
 
