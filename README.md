@@ -25,6 +25,7 @@ docker run --rm \
 
 Once the application is running, open the API documentation at [http://localhost:8000/docs/api](http://localhost:8000/docs/api).
 The database seeder creates a default user and 10 sample products so the API is not empty after setup.
+The bootstrap install step uses `laravelsail/php84-composer:latest` because that Composer helper image is currently published, while `laravelsail/php85-composer:latest` is not. The application itself still runs on PHP 8.5 in Sail.
 
 ## URLs
 
